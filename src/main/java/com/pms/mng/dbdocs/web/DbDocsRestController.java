@@ -68,7 +68,7 @@ public class DbDocsRestController {
         
         // 조회된 데이터 기반 엑셀 파일 가공
         try (
-                DbdocsTableWorkbook workbook = new DbdocsTableWorkbook();
+                DbdocsTableWorkbook workbook = new DbdocsTableWorkbook()
                 ) {
             // Create Sheet
             SXSSFSheet sheet = workbook.createSheet("테이블 목록");
@@ -167,7 +167,7 @@ public class DbDocsRestController {
         List<ColumnCommentDTO> tableCommentList = dbdocsPostgresService.selectTableColumnCommentDTOList(dbdocsSrchInfo);
 
         try (
-                DbdocsColumnWorkbook workbook = new DbdocsColumnWorkbook();
+                DbdocsColumnWorkbook workbook = new DbdocsColumnWorkbook()
         ) {
 
             // Create Sheet
